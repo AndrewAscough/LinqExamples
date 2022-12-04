@@ -4,7 +4,10 @@
     {
         public static IEnumerable<Employee> EmployeesWithSalaryGreaterThan100K(IEnumerable<Employee> employees)
         {
-            return employees;
+            return (from employee in employees
+                where employee.Salary > 100000
+                select employee
+            );
         }
 
         public static double AverageConsultantSalaryInBrisbane(IEnumerable<Employee> employees)

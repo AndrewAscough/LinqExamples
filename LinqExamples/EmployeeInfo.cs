@@ -12,7 +12,10 @@
 
         public static double AverageConsultantSalaryInBrisbane(IEnumerable<Employee> employees)
         {
-            return 0;
+            return EmployeeInfoHelper.AverageSalary((from employee in employees
+                where employee.City == "Brisbane" && employee.Level == "Consultant"
+                select employee
+            ));
         }
     }
 }
